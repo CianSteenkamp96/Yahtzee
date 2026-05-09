@@ -10,6 +10,7 @@ This project was created entirely using AI agents orchestrated by GitHub Copilot
 |-------|------|-------------|
 | **Orchestrator** | Project coordinator | Broke down the full request into phased tasks, managed dependencies between phases, delegated work to specialist agents, and coordinated parallel execution |
 | **Planner** | Architecture & design | Researched Yahtzee rules, designed the tech stack, defined the project structure (~60 files), planned the game engine architecture, bot AI strategy, and extensibility patterns |
+| **Designer** | UI/UX design | Available for visual design tasks including color palettes, layout design, component styling, and responsive breakpoints. Informed the classic green-felt theme, dice dot patterns, and scorecard layout |
 | **Coder** | Implementation | Built all code across 6 phases: project scaffolding, game engine (types, scoring, validation, state machine, bot AI), state management (Zustand stores, hooks, utilities), UI components (dice, scorecard, lobby, game, results screens), routing, service stubs, and final integration/bug fixes |
 
 The build was executed in 6 phases with parallel task execution where possible, resulting in a fully functional app with 45 passing tests.
