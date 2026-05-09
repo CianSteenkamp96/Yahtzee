@@ -1,0 +1,86 @@
+.screen {
+  align-items: center;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 255, 255, 0.09), transparent 22%),
+    radial-gradient(circle at 92% 26%, rgba(255, 255, 255, 0.07), transparent 24%),
+    var(--color-bg);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-md);
+}
+
+.hero {
+  align-items: center;
+  background: linear-gradient(165deg, rgba(245, 240, 232, 0.96), rgba(235, 229, 217, 0.96));
+  border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  max-width: 620px;
+  overflow: hidden;
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  width: 100%;
+}
+
+.decor {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.dieA,
+.dieB,
+.dieC {
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+  font-size: clamp(1.8rem, 1.1rem + 2vw, 3rem);
+}
+
+.dieB {
+  animation-delay: 0.35s;
+}
+
+.dieC {
+  animation-delay: 0.7s;
+}
+
+.subtitle {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  color: color-mix(in srgb, var(--color-primary) 84%, #6b0f0f);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.6rem, 1.8rem + 3.2vw, 5rem);
+  letter-spacing: 0.08em;
+  line-height: 0.95;
+  margin: var(--space-sm) 0 var(--space-lg);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+.actions {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.rules {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}

@@ -1,0 +1,82 @@
+.badge {
+  background: color-mix(in srgb, var(--color-surface) 84%, white);
+  border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 130px;
+  padding: var(--space-xs) var(--space-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.current {
+  border-color: color-mix(in srgb, var(--color-secondary) 58%, var(--color-primary));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-secondary) 38%, transparent), var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.headerRow {
+  align-items: center;
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: space-between;
+}
+
+.name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.turnDot {
+  animation: pulse 1.4s ease-in-out infinite;
+  background: var(--color-success);
+  border-radius: var(--radius-round);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-success) 45%, transparent);
+  height: 8px;
+  width: 8px;
+}
+
+.metaRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.score {
+  color: color-mix(in srgb, var(--color-text) 86%, black);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.bot {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.botDifficulty {
+  color: var(--color-text-light);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-success) 45%, transparent);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px color-mix(in srgb, var(--color-success) 0%, transparent);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-success) 0%, transparent);
+  }
+}

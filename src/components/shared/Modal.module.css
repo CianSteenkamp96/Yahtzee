@@ -1,0 +1,51 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal-backdrop);
+  display: grid;
+  place-items: center;
+  background-color: rgba(26, 26, 26, 0.58);
+  padding: var(--space-md);
+}
+
+.modal {
+  width: min(90vw, 500px);
+  max-height: min(80vh, 700px);
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  z-index: var(--z-modal);
+}
+
+.title {
+  padding: var(--space-lg) var(--space-lg) var(--space-sm);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.content {
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+}
+
+@media (max-width: 767px) {
+  .backdrop {
+    padding: var(--space-sm);
+  }
+
+  .modal {
+    width: 90vw;
+    border-radius: var(--radius-lg);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+  }
+
+  .content {
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+  }
+}

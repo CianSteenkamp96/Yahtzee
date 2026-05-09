@@ -1,0 +1,47 @@
+.wrapper {
+  width: min(100%, 420px);
+  margin-inline: auto;
+}
+
+.rollButton {
+  min-height: 56px;
+  border-radius: var(--radius-lg);
+  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.35rem);
+  box-shadow: var(--shadow-md);
+}
+
+.rollButton:hover:not(:disabled) {
+  animation: shakeHover 0.35s ease-in-out;
+}
+
+.pulse {
+  border-radius: var(--radius-lg);
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes shakeHover {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .rollButton {
+    min-height: 52px;
+    font-size: 1.05rem;
+  }
+}

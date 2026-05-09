@@ -1,0 +1,31 @@
+.header {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-light) 86%, black), var(--color-bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-surface) 18%, transparent);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.titleButton {
+  align-items: center;
+  color: var(--color-text-on-dark);
+  display: inline-flex;
+  gap: var(--space-sm);
+}
+
+.die {
+  font-size: var(--font-size-lg);
+}
+
+.title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.3rem, 1.12rem + 0.7vw, 1.8rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

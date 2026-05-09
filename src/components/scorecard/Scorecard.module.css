@@ -1,0 +1,154 @@
+.card {
+  background: var(--color-scorecard-bg);
+  border: 1px solid color-mix(in srgb, var(--color-scorecard-header) 20%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: linear-gradient(
+    125deg,
+    var(--color-scorecard-header),
+    color-mix(in srgb, var(--color-scorecard-header) 75%, var(--color-bg-light))
+  );
+  color: var(--color-text-on-dark);
+  padding: var(--space-md);
+}
+
+.playerName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  min-width: 320px;
+}
+
+.sectionHeader {
+  background: color-mix(in srgb, var(--color-scorecard-header) 8%, var(--color-scorecard-bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.sectionTitleRow {
+  align-items: center;
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  color: color-mix(in srgb, var(--color-scorecard-header) 85%, black);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.progressText {
+  color: var(--color-text-light);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.progressTrack {
+  background: color-mix(in srgb, var(--color-text-light) 16%, transparent);
+  border-radius: var(--radius-round);
+  height: 8px;
+  margin-top: var(--space-xs);
+  overflow: hidden;
+  width: 100%;
+}
+
+.progressFill {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-success));
+  border-radius: var(--radius-round);
+  display: block;
+  height: 100%;
+  transition: width var(--transition-normal);
+}
+
+.categoryRows > *:nth-child(odd) {
+  --score-row-bg: color-mix(in srgb, var(--color-scorecard-bg) 97%, black);
+}
+
+.categoryRows > *:nth-child(even) {
+  --score-row-bg: color-mix(in srgb, var(--color-scorecard-bg) 90%, var(--color-surface-alt));
+}
+
+.summaryRows {
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+.staticRow {
+  align-items: center;
+  background: color-mix(in srgb, var(--color-surface-alt) 65%, var(--color-scorecard-bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: 1fr auto;
+  min-height: 42px;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.staticLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.staticValue {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.staticRowEmphasized {
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--color-accent) 22%, var(--color-surface-alt)),
+    color-mix(in srgb, var(--color-secondary) 24%, var(--color-surface-alt))
+  );
+}
+
+.staticRowEmphasized .staticLabel,
+.staticRowEmphasized .staticValue {
+  color: color-mix(in srgb, var(--color-text) 90%, black);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: 767px) {
+  .cardHeader {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .playerName {
+    font-size: var(--font-size-md);
+  }
+
+  .table {
+    min-width: 290px;
+  }
+
+  .sectionHeader,
+  .staticRow {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .staticRowEmphasized .staticLabel,
+  .staticRowEmphasized .staticValue {
+    font-size: var(--font-size-md);
+  }
+}

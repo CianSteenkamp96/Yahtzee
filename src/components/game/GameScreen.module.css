@@ -1,0 +1,26 @@
+.leftStack,
+.rightStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.diceArea {
+  align-items: center;
+  background: linear-gradient(155deg, rgba(245, 240, 232, 0.96), rgba(235, 229, 217, 0.95));
+  border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+  padding: var(--space-md);
+}
+
+@media (max-width: 767px) {
+  .diceArea {
+    border-radius: var(--radius-lg);
+    min-height: 140px;
+    padding: var(--space-sm);
+  }
+}

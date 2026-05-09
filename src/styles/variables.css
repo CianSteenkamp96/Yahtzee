@@ -1,0 +1,75 @@
+:root {
+  /* Colors - Classic Yahtzee Theme */
+  --color-bg: #1a472a;
+  --color-bg-light: #2d5a3f;
+  --color-surface: #f5f0e8;
+  --color-surface-alt: #ebe5d9;
+  --color-text: #1a1a1a;
+  --color-text-light: #6b6b6b;
+  --color-text-on-dark: #f5f0e8;
+  --color-primary: #dc2626;
+  --color-primary-hover: #b91c1c;
+  --color-secondary: #d4a017;
+  --color-secondary-hover: #b8860b;
+  --color-accent: #2563eb;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-dice: #fefefe;
+  --color-dice-dot: #1a1a1a;
+  --color-dice-held: #fef3c7;
+  --color-dice-held-border: #d4a017;
+  --color-scorecard-bg: #f5f0e8;
+  --color-scorecard-header: #1a472a;
+  --color-scorecard-row-hover: #e8e2d6;
+  --color-scorecard-available: #dbeafe;
+  --color-scorecard-preview: #93c5fd;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-round: 50%;
+
+  /* Typography */
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Cascadia Code', 'Fira Code', monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.25);
+  --shadow-dice: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-dice-held: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 12px rgba(212, 160, 23, 0.4);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-modal-backdrop: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
