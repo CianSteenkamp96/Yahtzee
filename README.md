@@ -26,43 +26,40 @@ The build was executed in 6 phases with parallel task execution where possible, 
 - React Router v7
 - Vitest
 
-## How to Run
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (LTS recommended)
-- npm
+- [Node.js](https://nodejs.org/) v18 or later (LTS recommended)
+- npm (included with Node.js)
 
-### Install
+### Install & Run
 
 ```bash
+# Clone the repository
+git clone https://github.com/CianSteenkamp96/Yahtzee.git
+cd Yahtzee
+
+# Install dependencies
 npm install
-```
 
-### Development
-
-```bash
+# Start the development server
 npm run dev
 ```
 
-### Build
+The dev server will start and display a local URL in your terminal (typically **http://localhost:5173**). Open that URL in your browser to play the game.
 
-```bash
-npm run build
-```
+> **Tip:** The app is fully responsive — it works on desktop, tablet, and mobile browsers. You can also open it on your phone by using your machine's local network IP (shown in the terminal output).
 
-### Test
+### Other Commands
 
-```bash
-npm run test
-```
-
-### Other Scripts
-
-```bash
-npm run preview
-npm run lint
-```
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server at http://localhost:5173 |
+| `npm run build` | Build for production (outputs to `dist/`) |
+| `npm run preview` | Preview the production build locally |
+| `npm test` | Run the test suite (Vitest) |
+| `npm run lint` | Lint the codebase (ESLint) |
 
 ## Folder Structure
 
