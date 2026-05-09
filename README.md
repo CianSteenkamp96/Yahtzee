@@ -17,14 +17,16 @@ The build was executed in 6 phases with parallel task execution where possible, 
 
 ## Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- Zustand v5
-- Framer Motion
-- CSS Modules
-- React Router v7
-- Vitest
+| Technology | Purpose |
+|---|---|
+| **React 19** | Component-based UI framework for rendering the game interface |
+| **TypeScript** | Static type checking to catch bugs at compile time and improve code quality |
+| **Vite** | Lightning-fast build tool and dev server with native ES module support |
+| **Zustand v5** | Lightweight state management for game state, lobby setup, and app settings |
+| **Framer Motion** | Declarative animation library for dice rolls, transitions, and UI effects |
+| **CSS Modules** | Scoped, portable styling with CSS custom properties for a classic theme |
+| **React Router v7** | Client-side routing for navigation between home, lobby, game, and results screens |
+| **Vitest** | Fast unit test runner for testing game engine logic, scoring, and bot AI (45 tests passing) |
 
 ## Getting Started
 
