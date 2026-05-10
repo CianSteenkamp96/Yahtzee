@@ -2,6 +2,13 @@
 
 A web-based Yahtzee game built with React, TypeScript, and Vite. It supports local pass-and-play sessions, bot opponents, and a responsive UI with animated dice and score previews.
 
+<p align="center"><img width="582" height="387" alt="image" src="https://github.com/user-attachments/assets/c75603b3-a5a2-4e8f-a8ab-bd81359a0fb0" /></p>
+
+<p align="center"><img width="822" height="478" alt="image" src="https://github.com/user-attachments/assets/e2b1a48d-68a6-4612-8452-46e33d2b36a3" /></p>
+
+<p align="center"><img width="1918" height="903" alt="image" src="https://github.com/user-attachments/assets/cd316f60-9e2e-4a48-8af6-fbe3268d588a" /></p>
+
+
 ## Built with AI Agents
 
 This project was created entirely using AI agents orchestrated by GitHub Copilot in VS Code. Each agent played a specific role:
@@ -159,3 +166,4 @@ The `getBestHolds()` helper determines which dice to keep for a target category 
 - Mobile app
 - Improve rolling dice sound
 - Align upper and lower section rows
+- General UI/UX aesthetic improvements (e.g. poor colour combinations on Setup Game page)
