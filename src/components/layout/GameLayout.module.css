@@ -3,35 +3,9 @@
     radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.07), transparent 26%),
     radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.05), transparent 24%),
     var(--color-bg);
-  min-height: 100vh;
-  padding: var(--space-md);
-}
-
-.container {
-  display: grid;
-  gap: var(--space-md);
-  margin: 0 auto;
-  max-width: 1280px;
-}
-
-.leftPanel,
-.rightPanel {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
-  min-width: 0;
-}
-
-@media (min-width: 1025px) {
-  .container {
-    align-items: start;
-    gap: var(--space-lg);
-    grid-template-columns: minmax(0, 1.2fr) minmax(360px, 1fr);
-    padding: var(--space-sm) 0 var(--space-md);
-  }
-
-  .rightPanel {
-    position: sticky;
-    top: var(--space-sm);
-  }
+  overflow: hidden;
+  padding: var(--space-sm);
 }

@@ -6,8 +6,6 @@ import type { ScoreCategory } from '../../engine/types';
 import { useGame } from '../../hooks/useGame';
 import { useScorePreview } from '../../hooks/useScorePreview';
 import { useGameStore } from '../../store/gameStore';
-import { GameLayout } from '../layout/GameLayout';
-import { PlayerList } from '../players/PlayerList';
 import { DiceTray } from '../dice/DiceTray';
 import { RollButton } from './RollButton';
 import { TurnInfo } from './TurnInfo';
@@ -82,19 +80,8 @@ export function GameScreen() {
   };
 
   return (
-    <GameLayout>
-      <section className={styles.leftStack}>
-        <TurnInfo />
-        <PlayerList players={gameState.players} currentPlayerIndex={gameState.currentPlayerIndex} />
-
-        <div className={styles.diceArea}>
-          <DiceTray />
-        </div>
-
-        <RollButton />
-      </section>
-
-      <section className={styles.rightStack}>
+    <main className={styles.gameScreen}>
+      <section className={styles.topBar}>
         <ScoreboardTabs
           players={gameState.players}
           currentPlayerIndex={gameState.currentPlayerIndex}
@@ -102,7 +89,10 @@ export function GameScreen() {
           onTabChange={setActiveTab}
           grandTotals={grandTotals}
         />
+        <TurnInfo />
+      </section>
 
+      <section className={styles.middleArea}>
         <Scorecard
           player={selectedPlayer}
           isCurrentPlayer={isHumanCurrentTurn}
@@ -112,7 +102,12 @@ export function GameScreen() {
           canScore={canCurrentPlayerScore}
         />
       </section>
-    </GameLayout>
+
+      <section className={styles.bottomBar}>
+        <DiceTray />
+        <RollButton />
+      </section>
+    </main>
   );
 }
 

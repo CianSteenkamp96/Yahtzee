@@ -1,10 +1,12 @@
 import { MAX_ROLLS } from '../../engine/constants';
+import { useDiceSound } from '../../hooks/useDiceSound';
 import { useGame } from '../../hooks/useGame';
 import { Button } from '../shared/Button';
 import styles from './RollButton.module.css';
 
 export function RollButton() {
   const { gameState, currentPlayer, isRolling, canRoll, roll } = useGame();
+  const { playRollSound } = useDiceSound();
 
   if (!gameState || !currentPlayer) {
     return null;
@@ -24,16 +26,20 @@ export function RollButton() {
 
   const shouldPulse = !disabled && !isBotTurn && rollsLeft === MAX_ROLLS;
 
+  const handleRoll = () => {
+    playRollSound();
+    roll();
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={shouldPulse ? styles.pulse : undefined}>
         <Button
           variant="primary"
           size="lg"
-          fullWidth
           disabled={disabled}
           className={styles.rollButton}
-          onClick={roll}
+          onClick={handleRoll}
         >
           {label}
         </Button>

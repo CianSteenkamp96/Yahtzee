@@ -1,12 +1,13 @@
 .wrapper {
-  width: min(100%, 420px);
-  margin-inline: auto;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2px;
 }
 
 .rollButton {
-  min-height: 56px;
+  min-height: 52px;
   border-radius: var(--radius-lg);
-  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.35rem);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.2rem);
   box-shadow: var(--shadow-md);
 }
 

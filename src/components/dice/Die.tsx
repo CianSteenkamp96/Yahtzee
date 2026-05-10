@@ -69,8 +69,9 @@ export function Die({ value, isHeld, canHold, onToggleHold, isRolling, index }: 
       }}
       onKeyDown={handleKeyDown}
       animate={{
-        ...rollingAnimation,
-        y: isHeld ? -8 : 0,
+        rotate: isRolling && !isHeld ? rollingAnimation.rotate : 0,
+        scale: isRolling && !isHeld ? rollingAnimation.scale : 1,
+        y: 0,
       }}
       transition={{
         duration: isRolling ? 0.6 : 0.24,

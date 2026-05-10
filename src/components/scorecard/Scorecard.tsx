@@ -40,7 +40,7 @@ interface StaticRowProps {
 
 function StaticRow({ label, value, emphasized = false }: StaticRowProps) {
   return (
-    <div className={`${styles.staticRow} ${emphasized ? styles.staticRowEmphasized : ''}`} role="row">
+    <div className={`${styles.staticRow} ${emphasized ? styles.staticRowEmphasized : ''}`}>
       <span className={styles.staticLabel}>{label}</span>
       <span className={styles.staticValue}>{value}</span>
     </div>
@@ -96,13 +96,9 @@ export function Scorecard({
 
   return (
     <section className={styles.card} aria-label={`${player.name} scorecard`}>
-      <header className={styles.cardHeader}>
-        <h2 className={styles.playerName}>{player.name}</h2>
-      </header>
-
-      <div className={styles.tableWrap}>
-        <div className={styles.table} role="table" aria-label={`${player.name} Yahtzee scorecard`}>
-          <div className={styles.sectionHeader} role="rowgroup">
+      <div className={styles.columns} aria-label={`${player.name} Yahtzee scorecard`}>
+        <section className={styles.column}>
+          <div className={styles.sectionHeader}>
             <div className={styles.sectionTitleRow}>
               <h3 className={styles.sectionTitle}>Upper Section</h3>
               <span className={styles.progressText}>{formatProgress(upperTotal, UPPER_BONUS_THRESHOLD)}</span>
@@ -112,34 +108,38 @@ export function Scorecard({
             </div>
           </div>
 
-          <div className={styles.categoryRows} role="rowgroup">
+          <div className={styles.categoryRows}>
             {UPPER_CATEGORIES.map((category) => renderCategoryRow(category))}
+            <div className={styles.spacerRow} />
           </div>
 
-          <div className={styles.summaryRows} role="rowgroup">
+          <div className={styles.summaryRows}>
             <StaticRow label="Upper Total" value={upperTotal} />
             <StaticRow
               label={`Bonus (>=${UPPER_BONUS_THRESHOLD})`}
               value={upperBonus > 0 ? UPPER_BONUS_POINTS : 0}
             />
+            <StaticRow label="" value="" />
           </div>
+        </section>
 
-          <div className={styles.sectionHeader} role="rowgroup">
+        <section className={styles.column}>
+          <div className={styles.sectionHeader}>
             <div className={styles.sectionTitleRow}>
               <h3 className={styles.sectionTitle}>Lower Section</h3>
             </div>
           </div>
 
-          <div className={styles.categoryRows} role="rowgroup">
+          <div className={styles.categoryRows}>
             {LOWER_CATEGORIES.map((category) => renderCategoryRow(category))}
           </div>
 
-          <div className={styles.summaryRows} role="rowgroup">
+          <div className={styles.summaryRows}>
             <StaticRow label="Lower Total" value={lowerTotal} />
             <StaticRow label="Yahtzee Bonus" value={yahtzeeBonus} />
             <StaticRow label="Grand Total" value={grandTotal} emphasized />
           </div>
-        </div>
+        </section>
       </div>
     </section>
   );

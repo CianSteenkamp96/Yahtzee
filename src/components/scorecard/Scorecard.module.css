@@ -7,36 +7,31 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
-.cardHeader {
-  background: linear-gradient(
-    125deg,
-    var(--color-scorecard-header),
-    color-mix(in srgb, var(--color-scorecard-header) 75%, var(--color-bg-light))
-  );
-  color: var(--color-text-on-dark);
-  padding: var(--space-md);
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  height: 100%;
+  min-height: 0;
 }
 
-.playerName {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  margin: 0;
+.column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.tableWrap {
-  overflow-x: auto;
-}
-
-.table {
-  min-width: 320px;
+.column:first-child {
+  border-right: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
 }
 
 .sectionHeader {
   background: color-mix(in srgb, var(--color-scorecard-header) 8%, var(--color-scorecard-bg));
   border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
-  padding: var(--space-sm) var(--space-md);
+  padding: 6px var(--space-sm);
 }
 
 .sectionTitleRow {
@@ -48,7 +43,7 @@
 
 .sectionTitle {
   color: color-mix(in srgb, var(--color-scorecard-header) 85%, black);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.04em;
   margin: 0;
@@ -65,8 +60,8 @@
 .progressTrack {
   background: color-mix(in srgb, var(--color-text-light) 16%, transparent);
   border-radius: var(--radius-round);
-  height: 8px;
-  margin-top: var(--space-xs);
+  height: 6px;
+  margin-top: 4px;
   overflow: hidden;
   width: 100%;
 }
@@ -83,11 +78,21 @@
   --score-row-bg: color-mix(in srgb, var(--color-scorecard-bg) 97%, black);
 }
 
+.categoryRows {
+  flex: 1 1 auto;
+}
+
+.spacerRow {
+  min-height: 32px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+}
+
 .categoryRows > *:nth-child(even) {
   --score-row-bg: color-mix(in srgb, var(--color-scorecard-bg) 90%, var(--color-surface-alt));
 }
 
 .summaryRows {
+  margin-top: auto;
   border-top: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
 }
 
@@ -98,18 +103,18 @@
   display: grid;
   gap: var(--space-sm);
   grid-template-columns: 1fr auto;
-  min-height: 42px;
-  padding: var(--space-sm) var(--space-md);
+  min-height: 32px;
+  padding: 5px var(--space-sm);
 }
 
 .staticLabel {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
 }
 
 .staticValue {
   font-family: var(--font-family-mono);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
 }
 
@@ -124,31 +129,32 @@
 .staticRowEmphasized .staticLabel,
 .staticRowEmphasized .staticValue {
   color: color-mix(in srgb, var(--color-text) 90%, black);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
 }
 
 @media (max-width: 767px) {
-  .cardHeader {
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .playerName {
-    font-size: var(--font-size-md);
-  }
-
-  .table {
-    min-width: 290px;
-  }
-
   .sectionHeader,
   .staticRow {
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
   }
 
-  .staticRowEmphasized .staticLabel,
-  .staticRowEmphasized .staticValue {
-    font-size: var(--font-size-md);
+  .column:first-child {
+    border-right-width: 0;
+  }
+
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 0.66rem;
+  }
+
+  .progressText,
+  .staticLabel,
+  .staticValue {
+    font-size: 0.7rem;
   }
 }

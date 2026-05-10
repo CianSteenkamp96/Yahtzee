@@ -33,7 +33,7 @@ export function ScoreRow({
   const isScored = score !== undefined;
   const isZeroScore = score === 0;
   const isInteractive = isAvailable && isCurrentPlayer;
-  const showPreview = !isScored && previewScore !== undefined;
+  const showPreview = isInteractive && !isScored && previewScore !== undefined;
 
   const handleSelect = () => {
     if (isInteractive) {

@@ -1,5 +1,5 @@
 .die {
-  --die-size: 60px;
+  --die-size: 48px;
 
   width: var(--die-size);
   height: var(--die-size);
@@ -50,8 +50,8 @@
 }
 
 .pip {
-  width: 11px;
-  height: 11px;
+  width: 8px;
+  height: 8px;
   border-radius: var(--radius-round);
   background-color: var(--color-dice-dot);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
@@ -69,22 +69,22 @@
 
 @media (min-width: 768px) {
   .die {
-    --die-size: 80px;
+    --die-size: 55px;
   }
 
   .pip {
-    width: 13px;
-    height: 13px;
+    width: 9px;
+    height: 9px;
   }
 }
 
 @media (min-width: 1025px) {
   .die {
-    --die-size: 90px;
+    --die-size: 60px;
   }
 
   .pip {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
   }
 }

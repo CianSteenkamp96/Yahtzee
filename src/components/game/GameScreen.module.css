@@ -1,26 +1,52 @@
-.leftStack,
-.rightStack {
+.gameScreen {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
+  overflow: hidden;
+  padding: var(--space-sm);
 }
 
-.diceArea {
-  align-items: center;
-  background: linear-gradient(155deg, rgba(245, 240, 232, 0.96), rgba(235, 229, 217, 0.95));
-  border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+.topBar {
   display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 0 0 auto;
+}
+
+.middleArea {
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.middleArea > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.bottomBar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
-  min-height: 180px;
-  padding: var(--space-md);
+  gap: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  background: linear-gradient(155deg, rgba(245, 240, 232, 0.96), rgba(235, 229, 217, 0.95));
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 767px) {
-  .diceArea {
-    border-radius: var(--radius-lg);
-    min-height: 140px;
-    padding: var(--space-sm);
+  .gameScreen {
+    padding: var(--space-xs);
+    gap: var(--space-xs);
+  }
+
+  .bottomBar {
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
   }
 }

@@ -124,10 +124,31 @@ src/
 ## Features
 
 - Local pass-and-play for 2 to 6 players
-- Bot opponents with `easy`, `medium`, and `hard` difficulty
-- Responsive layout for desktop and mobile
-- Dice roll/hold animation flow
-- Live score previews before committing a category
+- Bot opponents with `easy`, `medium`, and `hard` difficulty levels ([details below](#bot-ai))
+- Two-column scorecard layout (upper section left, lower section right) - everything visible without scrolling
+- All potential scores shown at a glance after each roll (no hover required)
+- Dice rolling sound effects generated via the Web Audio API (no external audio files)
+- Dice roll animations with Framer Motion - held dice stay completely still during rolls
+- Responsive layout for desktop, tablet, and mobile
+- Compact bottom bar with dice and roll button side by side
+
+## Bot AI
+
+The bot uses a **greedy heuristic with expected-value estimation** rather than a full game-tree search. Each bot turn follows a **decide -> act -> repeat** loop: evaluate available categories, decide whether to roll or score, and which dice to hold.
+
+### Difficulty Levels
+
+| Level | Scoring Strategy | Hold Strategy | Behaviour |
+|---|---|---|---|
+| **Easy** | Picks a **random** available category | Holds dice matching the most frequent value (simple frequency count) | No planning, no optimization. Often wastes good rolls on low-value categories |
+| **Medium** | Picks the category with the **highest immediate score** | Calculates an expected score per category via `estimateExpectedScore()` and holds dice that best contribute to the top-scoring target | Greedy optimizer. Maximizes each individual turn but doesn't consider long-term strategy |
+| **Hard** | Uses **weighted expected-value scoring** combining: immediate score, upper bonus progress tracking, category scarcity weighting, and Yahtzee bonus opportunism | Same expected-value targeting as Medium, but scoring picks account for remaining category count (scarcity), whether the upper bonus (>=63) is on track, and whether chasing a bonus Yahtzee is viable | Strategic. Prioritizes hard-to-fill categories when dice are close, tracks upper section progress against the 63 threshold, and adjusts weights as the game progresses |
+
+### How Expected Value Works
+
+The `estimateExpectedScore()` function uses heuristic multipliers based on how close the current dice are to achieving each category (e.g., frequency counts for n-of-a-kind, unique values for straights) scaled by rolls remaining. It is not a full probability calculation but a fast approximation that runs instantly on the client.
+
+The `getBestHolds()` helper determines which dice to keep for a target category - for example, holding all dice matching the target value for upper categories, or holding the best partial straight sequence for straight categories.
 
 ## Future Plans
 
@@ -136,3 +157,5 @@ src/
 - Persistent game history
 - Leaderboards
 - Mobile app
+- Improve rolling dice sound
+- Align upper and lower section rows

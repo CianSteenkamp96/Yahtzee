@@ -1,18 +1,18 @@
 .tray {
-  width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-md);
+  flex-wrap: nowrap;
+  gap: var(--space-sm);
 }
 
 .slot {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-xs);
-  min-width: 60px;
+  gap: 2px;
+  min-width: 52px;
 }
 
 .heldLabel {
@@ -25,19 +25,26 @@
 
 @media (max-width: 767px) {
   .tray {
-    max-width: 240px;
-    margin-inline: auto;
-    gap: var(--space-sm);
+    gap: 6px;
   }
 
   .slot {
-    flex: 0 0 calc(33.33% - var(--space-sm));
-    min-width: 56px;
+    min-width: 48px;
   }
 }
 
 @media (min-width: 768px) {
   .tray {
-    gap: var(--space-lg);
+    gap: var(--space-sm);
+  }
+
+  .slot {
+    min-width: 55px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .slot {
+    min-width: 60px;
   }
 }
